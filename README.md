@@ -4,4 +4,5 @@ https://github.com/lashadeiso/Angular-AssetManager/assets/85881151/7c8c7baf-8df9
 -----------------------------
 - Front/Angular: Lasha Deisadze 
 - Back/NestJS: Revazi Kukhianidze
+- 🔗: https://angular-asset-manager.vercel.app/sign-in
 
