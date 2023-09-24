@@ -1,0 +1,68 @@
+<div class="edit-selected-device-container">
+  <div class="edit-selected-device-header"></div>
+  <div class="edit-selected-device-content">
+    <div class="edit-selected-device-title">Edit Selected Device</div>
+    <div class="edit-selected-device-body">
+      <form
+        (ngSubmit)="onFormSubmit(editSelectedDeviceFromStorage)"
+        #editSelectedDeviceFromStorage="ngForm"
+        class="edit-selected-device-form"
+      >
+        <div class="edit-selected-device-inputs">
+          <mat-form-field class="edit-selected-device-brand">
+            <mat-label>Brand</mat-label>
+            <input
+              matInput
+              [(ngModel)]="updatedSelectedDevice.brand"
+              name="brand"
+              required
+            />
+          </mat-form-field>
+
+          <mat-form-field class="edit-selected-device-model">
+            <mat-label>Model</mat-label>
+            <input
+              matInput
+              [(ngModel)]="updatedSelectedDevice.model"
+              name="model"
+              required
+            />
+          </mat-form-field>
+
+          <mat-form-field class="edit-selected-device-site">
+            <mat-label>Site</mat-label>
+            <mat-select
+              name="site"
+              [(ngModel)]="updatedSelectedDevice.site"
+              required
+            >
+              <mat-option *ngFor="let site of sitesDropDown" [value]="site">
+                {{ site }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="edit-selected-device-quantity">
+            <mat-label>Quantity</mat-label>
+            <input
+              matInput
+              [(ngModel)]="updatedSelectedDevice.quantity"
+              name="quantity"
+              required
+              type="number"
+            />
+          </mat-form-field>
+
+          <div class="edit-selected-device-btn">
+            <button
+              type="submit"
+              [disabled]="!editSelectedDeviceFromStorage.valid"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+@use "/src/scss/mixins";
+
+// ------------------
+
+.user-registration-container {
+  width: 100%;
+  height: calc(100% - 50px);
+  .user-registration-content {
+    @include mixins.registrationForm;
+    .user-registration-title {
+      margin: 0 auto;
+      width: 80%;
+      height: 20px;
+      border-bottom: 2px solid var(--darkWhite) !important;
+      color: var(--darkWhite);
+      font-size: 20px;
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+
+  .sign-up-inputs {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    mat-label {
+      color: var(--white);
+    }
+    input {
+      color: var(--white);
+    }
+  }
+  .sign-up-btn {
+    width: 100%;
+    height: 50px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      @include mixins.formGroupBtn;
+    }
+  }
+}
+
+.showmodal {
+  z-index: 12;
+}

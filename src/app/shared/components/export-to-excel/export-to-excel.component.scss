@@ -1,0 +1,7 @@
+@use "/src/scss/mixins";
+.export-excel-btn {
+  button {
+    margin-left: 20px;
+    @include mixins.userBtn;
+  }
+}

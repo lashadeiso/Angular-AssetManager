@@ -1,0 +1,24 @@
+<section class="admin-main-container">
+  <div class="admin-main-header">
+    <app-header
+      [loginUserFullName]="loginUserFullName"
+      [userRole]="isAdmin"
+    ></app-header>
+  </div>
+
+  <div class="admin-main-side-bar">
+    <app-side-bar [userRole]="isAdmin"></app-side-bar>
+  </div>
+
+  <div class="admin-main-body">
+    <router-outlet></router-outlet>
+
+    <div class="admin-main-dashboards" *ngIf="dashboardVisible">
+      <app-dashboard></app-dashboard>
+    </div>
+  </div>
+</section>
+
+<div class="loading-spinner" *ngIf="loadingStatus">
+  <app-loader></app-loader>
+</div>

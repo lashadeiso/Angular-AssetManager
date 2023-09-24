@@ -1,0 +1,40 @@
+<div class="sign-in-container">
+  <div class="sign-in-logo"></div>
+  <div class="sign-in-content">
+    <form [formGroup]="signIn" (ngSubmit)="onFormSubmit()" class="sign-in-form">
+      <div class="sign-in-header">Sign In</div>
+      <div class="sign-in-inputs">
+        <mat-form-field class="sign-in-mail">
+          <mat-label>E-mail</mat-label>
+          <input matInput formControlName="email" />
+        </mat-form-field>
+
+        <mat-form-field class="sign-in-password">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            formControlName="password"
+            [type]="hide ? 'password' : 'text'"
+          />
+          <button
+            type="button"
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+      <div class="sign-in-btn">
+        <button type="submit" [disabled]="!signIn.valid">Sign In</button>
+      </div>
+      <div class="error-message" *ngIf="invalidUser">{{ errorMessage }}</div>
+    </form>
+  </div>
+</div>
+<div class="loading-spinner" *ngIf="loadingStatus">
+  <app-loader></app-loader>
+</div>

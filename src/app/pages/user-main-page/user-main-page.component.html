@@ -1,0 +1,18 @@
+<section class="user-main-container">
+  <div class="user-main-header">
+    <app-header
+      [loginUserFullName]="loginUserFullName"
+      [userRole]="isAdmin"
+    ></app-header>
+  </div>
+  <div class="user-main-side-bar">
+    <app-side-bar></app-side-bar>
+  </div>
+
+  <div class="user-main-body">
+    <router-outlet></router-outlet>
+  </div>
+</section>
+<div class="loading-spinner" *ngIf="loadingStatus">
+  <app-loader></app-loader>
+</div>

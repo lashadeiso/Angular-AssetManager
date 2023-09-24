@@ -1,0 +1,63 @@
+/* You can add global styles to this file, and also import other style files */
+@import "/src/scss/index.scss";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+// -----------------Angular Material /  inputs background color
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: inherit !important;
+}
+
+.mdc-text-field--filled:active {
+  background-color: inherit !important;
+}
+
+// .mdc-floating-label,
+.mat-mdc-select-value,
+.mat-mdc-select-arrow,
+.mat-mdc-icon-button {
+  color: var(--white) !important;
+}
+
+.mdc-menu-surface,
+.mdc-text-field {
+  background-color: var(--backGround) !important;
+}
+.mdc-list-item__primary-text {
+  color: var(--white) !important;
+}
+
+// Swall
+div:where(.swal2-container).swal2-center > .swal2-popup {
+  background-color: var(--backGround);
+  color: var(--white);
+}
+
+// ერთმანეთზე დამოკიდებული დროპდაუნები
+
+.mat-form-field-disabled {
+  mat-label {
+    color: var(--darkGray) !important;
+  }
+  .mat-mdc-select-arrow {
+    color: var(--darkGray) !important;
+  }
+}
+
+// storage-headsets ში site dropdowns ის border-bottom ის გაქრობა
+.all-headsets-from-storage-header {
+  .mdc-line-ripple::before,
+  .mdc-line-ripple::after {
+    border-bottom-style: none !important;
+  }
+  .mat-mdc-form-field-infix {
+    width: 100px !important;
+  }
+}

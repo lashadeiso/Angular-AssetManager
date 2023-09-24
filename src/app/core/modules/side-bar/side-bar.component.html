@@ -1,0 +1,16 @@
+<section class="side-bar-container">
+  <div class="side-bar-btns">
+    <div class="users tree-btn" *ngIf="userRole">
+      <app-tree-button
+        [node]="usersTreeBtn"
+        (click)="loadUsers()"
+      ></app-tree-button>
+    </div>
+    <div class="storage tree-btn" *ngIf="userRole">
+      <app-tree-button [node]="storageTreeBtn"></app-tree-button>
+    </div>
+    <div class="assigne-to tree-btn">
+      <app-tree-button [node]="assigneToTreeBtn"></app-tree-button>
+    </div>
+  </div>
+</section>

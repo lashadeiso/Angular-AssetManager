@@ -1,0 +1,57 @@
+@mixin signInForm {
+  margin: 0 auto;
+  padding: 5%;
+  height: 500px;
+  width: 450px;
+  background-color: var(--backGround);
+  border: 3px solid var(--gold);
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+@mixin registrationForm {
+  position: relative;
+  margin: 50px auto;
+  padding: 2% 5%;
+  height: 1000px;
+  width: 600px;
+  background-color: var(--backGround);
+  border: 3px solid var(--gold);
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+@mixin editUserForm {
+  position: relative;
+  margin: 40px auto;
+  padding: 5%;
+  height: 600px;
+  width: 500px;
+  background-color: var(--backGround);
+  border: 3px solid var(--gold);
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+@mixin changePasswordForm {
+  position: relative;
+  margin: 50px auto;
+  padding: 5%;
+  height: 550px;
+  width: 500px;
+  background-color: var(--backGround);
+  border: 3px solid var(--gold);
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+@mixin resetPasswordForm {
+  position: relative;
+  margin: 40px auto;
+  padding: 5%;
+  height: 550px;
+  width: 500px;
+  background-color: var(--backGround);
+  border: 3px solid var(--gold);
+  box-sizing: border-box;
+  border-radius: 10px;
+}

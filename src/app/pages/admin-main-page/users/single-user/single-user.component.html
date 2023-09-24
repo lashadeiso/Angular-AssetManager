@@ -1,0 +1,99 @@
+<div class="single-user-container">
+  <div class="single-user-header">
+    <button class="single-user-reset-btn" (click)="onResetPassword()">
+      Reset Password
+    </button>
+  </div>
+  <div class="single-user-content">
+    <div class="single-user-title">Edit User</div>
+    <div class="single-user-body">
+      <form
+        (ngSubmit)="onFormSubmit(singleUserEditForm)"
+        #singleUserEditForm="ngForm"
+        class="single-user-form"
+      >
+        <div class="single-user-inputs">
+          <mat-form-field class="single-user-fullName">
+            <mat-label>Full Name</mat-label>
+            <input
+              matInput
+              [(ngModel)]="singleUser.fullName"
+              name="fullName"
+              required
+            />
+          </mat-form-field>
+
+          <mat-form-field class="single-user-email">
+            <mat-label>E-mail</mat-label>
+            <input
+              matInput
+              [(ngModel)]="singleUser.email"
+              name="email"
+              required
+            />
+          </mat-form-field>
+
+          <mat-form-field class="single-user-status">
+            <mat-label>Status</mat-label>
+            <mat-select
+              name="isActive"
+              [(ngModel)]="singleUser.isActive"
+              required
+            >
+              <mat-option
+                *ngFor="let status of statusesDropDown"
+                [value]="status"
+              >
+                {{ status }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="single-user-role">
+            <mat-label>Role</mat-label>
+            <mat-select name="role" required [(ngModel)]="singleUser.role">
+              <mat-option *ngFor="let role of rolesDropDown" [value]="role">
+                {{ role }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="single-user-site">
+            <mat-label>Site</mat-label>
+            <mat-select
+              name="site"
+              required
+              [(ngModel)]="singleUser.site"
+              (selectionChange)="getProject($event.value)"
+            >
+              <mat-option *ngFor="let site of sitesDropDown" [value]="site">
+                {{ site }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="single-user-project">
+            <mat-label>Project</mat-label>
+            <mat-select
+              name="project"
+              [(ngModel)]="singleUser.project"
+              required
+            >
+              <mat-option
+                *ngFor="let project of projectsDropDowns"
+                [value]="project"
+              >
+                {{ project }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div class="single-user-btn">
+            <button type="submit" [disabled]="!singleUserEditForm.valid">
+              Submit
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,144 @@
+<div class="edit-owner-container">
+  <div class="edit-owner-header">
+    <!-- <button class="back-to-prev-page-btn">Back</button> -->
+  </div>
+  <div class="edit-owner-content">
+    <div class="edit-owner-title">Edit</div>
+    <div class="edit-owner-body">
+      <form
+        (ngSubmit)="onFormSubmit(editOwnerForm)"
+        #editOwnerForm="ngForm"
+        class="edit-owner-form"
+      >
+        <div class="edit-owner-inputs">
+          <mat-form-field class="selected-device-serial-number">
+            <mat-label>Serial Number</mat-label>
+            <input
+              matInput
+              [(ngModel)]="OwnerOfSelDev.serialNumber"
+              name="serialNumber"
+              required
+            />
+          </mat-form-field>
+
+          <mat-form-field class="selected-device-brand">
+            <mat-label>Brand</mat-label>
+            <mat-select
+              name="brand"
+              [(ngModel)]="OwnerOfSelDev.brand"
+              required
+              (selectionChange)="getModelSelectBox($event.value)"
+            >
+              <mat-option *ngFor="let brand of brandsDropDown" [value]="brand">
+                {{ brand }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="selected-device-model">
+            <mat-label>Model</mat-label>
+            <mat-select name="model" required [(ngModel)]="OwnerOfSelDev.model">
+              <mat-option *ngFor="let model of modelsDropDown" [value]="model">
+                {{ model }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field
+            class="selected-device-host-name"
+            *ngIf="selDevice === 'laptop' || selDevice === 'windows-pc'"
+          >
+            <mat-label>Host Name</mat-label>
+            <input
+              matInput
+              [(ngModel)]="OwnerOfSelDev.hostname"
+              name="hostname"
+              required
+            />
+          </mat-form-field>
+
+          <mat-form-field
+            class="selected-device-mac-address"
+            *ngIf="selDevice === 'laptop' || selDevice === 'windows-pc'"
+          >
+            <mat-label>Mac Address</mat-label>
+            <input
+              matInput
+              [(ngModel)]="OwnerOfSelDev.macAddress"
+              name="macAddress"
+              required
+            />
+          </mat-form-field>
+
+          <mat-form-field
+            class="selected-device-asset-number"
+            *ngIf="selDevice === 'laptop' || selDevice === 'windows-pc'"
+          >
+            <mat-label>Asset Number</mat-label>
+            <input
+              matInput
+              [(ngModel)]="OwnerOfSelDev.assetNumber"
+              name="assetNumber"
+              required
+            />
+          </mat-form-field>
+
+          <mat-form-field class="owner-site">
+            <mat-label>Site</mat-label>
+            <mat-select
+              name="site"
+              [(ngModel)]="OwnerOfSelDev.site"
+              required
+              (selectionChange)="getProject($event.value)"
+            >
+              <mat-option *ngFor="let site of sitesDropDown" [value]="site">
+                {{ site }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="owner-project">
+            <mat-label>Project</mat-label>
+            <mat-select
+              name="project"
+              [(ngModel)]="OwnerOfSelDev.project"
+              required
+              (selectionChange)="getUserSelectBox($event.value)"
+            >
+              <mat-option
+                *ngFor="let project of projectsDropDowns"
+                [value]="project"
+              >
+                {{ project }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="edit-owner">
+            <mat-label>Owner</mat-label>
+            <mat-select name="user" [(ngModel)]="OwnerOfSelDev.user" required>
+              <mat-option *ngFor="let user of usersDropDowns" [value]="user">
+                {{ user }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="edit-comment">
+            <mat-label>Comment</mat-label>
+            <textarea
+              matInput
+              [(ngModel)]="OwnerOfSelDev.comment"
+              name="comment"
+            ></textarea>
+          </mat-form-field>
+
+          <div class="edit-owner-btn">
+            <button type="submit" [disabled]="!editOwnerForm.valid">
+              Submit
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

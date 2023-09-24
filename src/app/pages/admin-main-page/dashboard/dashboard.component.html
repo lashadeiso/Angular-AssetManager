@@ -1,0 +1,24 @@
+<div class="dashboard-container">
+  <div class="dashboard-widgets-wrapper">
+    <div class="dashboard-widget" *ngFor="let widget of dashboardWidgets">
+      <app-widget
+        [title]="widget.title"
+        [content]="widget.content"
+        [icon]="widget.icon"
+        [color]="widget.color"
+      >
+      </app-widget>
+    </div>
+  </div>
+  <div class="chart-container">
+    <div class="line-chart">
+      <app-line-chart></app-line-chart>
+    </div>
+    <div class="pie-chart">
+      <app-pie-chart [pieChartData]="pieChartData"></app-pie-chart>
+    </div>
+    <div class="calendar"></div>
+  </div>
+
+  <div class="top-product"></div>
+</div>

@@ -1,0 +1,36 @@
+mat-card {
+  width: 12vw;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 12vh !important;
+  border: 1px solid var(--darkWhite);
+}
+
+mat-card-header {
+  height: 60%;
+  width: 100%;
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: white;
+}
+mat-card-content {
+  height: 40%;
+  width: 100%;
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: white;
+  color: var(--ballot);
+  font-weight: bold;
+}
+
+mat-icon,
+mat-card-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 18px;
+}

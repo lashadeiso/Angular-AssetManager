@@ -1,0 +1,24 @@
+<div class="all-user">
+  <div class="users-header">
+    <button class="add-new-user-btn" (click)="addNewUser()">
+      Add New User
+    </button>
+
+    <div class="all-user-export-to-excel">
+      <app-export-to-excel [data]="allUsers"></app-export-to-excel>
+    </div>
+    <div class="export-to-pdf">
+      <app-export-to-pdf></app-export-to-pdf>
+    </div>
+  </div>
+  <div class="users-table">
+    <app-table
+      [displayedColumns]="displayedColumns"
+      [columnLabels]="columnLabels"
+      [dataSource]="dataSource"
+      [allEquipment]="allUsers"
+      (deleteItem)="deleteItem($event)"
+      (editItem)="editItem($event)"
+    ></app-table>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+@use "/src/scss/mixins";
+
+.header-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .header-left-side {
+    height: 100%;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+    .header-left-side-logo {
+      background-image: url("/assets/icons/logo-icon.svg");
+      @include mixins.sideBarlogoIcon;
+    }
+    .header-left-side-title {
+      span {
+        font-size: 20px;
+        font-weight: 550;
+        color: var(--gold);
+        font-family: Helvetica, sans-serif;
+      }
+    }
+  }
+  background-color: var(--backGround);
+  .header-right-side {
+    height: 100%;
+    width: 150px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .header-login-user-name {
+      font-size: 18px;
+      font-weight: 550;
+      margin-right: 20px;
+      // color: var(--gold);
+    }
+    .header-login-user-profile {
+      // background-image: url("/assets/icons/person-icon.svg");
+      box-sizing: border-box;
+      @include mixins.headerIcon;
+      cursor: pointer;
+      transition: all 0.3s;
+      &:hover {
+        scale: 1.1;
+      }
+    }
+  }
+}

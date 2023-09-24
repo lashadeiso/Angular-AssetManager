@@ -1,0 +1,17 @@
+<div class="all-sel-dev-from-storage">
+  <div class="all-sel-dev-from-storage-header">
+    <button class="add-new-device-btn" (click)="navigateAddNewDevice()">
+      Add New
+    </button>
+  </div>
+  <div class="all-sel-dev-from-storage-table">
+    <app-table
+      [displayedColumns]="displayedColumns"
+      [columnLabels]="columnLabels"
+      [dataSource]="dataSource"
+      [allEquipment]="allSelDevFromStorage"
+      (deleteItem)="deleteItem($event)"
+      (editItem)="editItem($event)"
+    ></app-table>
+  </div>
+</div>

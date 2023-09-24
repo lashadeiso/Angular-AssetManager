@@ -1,0 +1,5 @@
+@use "/src/scss/mixins";
+.export-to-pdf-btn {
+  margin-left: 20px;
+  @include mixins.userBtn;
+}

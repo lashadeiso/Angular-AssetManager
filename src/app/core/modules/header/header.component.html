@@ -1,0 +1,39 @@
+<section class="header-container">
+  <div
+    class="header-left-side"
+    (click)="loadMainPage()"
+    (keyup.enter)="loadMainPage()"
+    tabindex="0"
+  >
+    <div class="header-left-side-logo"></div>
+    <div class="header-left-side-title">
+      <span>Asset Manager</span>
+    </div>
+  </div>
+
+  <div class="header-right-side">
+    <div
+      class="header-login-user-name"
+      [style.color]="userRole ? '#f99d76' : '#fcb21b'"
+    >
+      Hi {{ loginUserFullName | capitalize }}
+    </div>
+    <div
+      class="header-login-user-profile"
+      mat-button
+      [matMenuTriggerFor]="menu"
+      [style.background-image]="
+        userRole
+          ? 'url(/assets/icons/admin-icon.svg)'
+          : 'url(/assets/icons/user-icon.svg)'
+      "
+    >
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="loadChangePassword()">
+          Change Password
+        </button>
+        <button mat-menu-item (click)="signOut()">Sign Out</button>
+      </mat-menu>
+    </div>
+  </div>
+</section>

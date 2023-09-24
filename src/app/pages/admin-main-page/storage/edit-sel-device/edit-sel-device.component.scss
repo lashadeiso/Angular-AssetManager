@@ -1,0 +1,53 @@
+@use "/src/scss/mixins";
+
+// ------------------
+
+.edit-selected-device-container {
+  width: 100%;
+  height: 100%;
+  .edit-selected-device-header {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: var(--backGround);
+    border-bottom: 4px solid var(--gold);
+  }
+
+  .edit-selected-device-content {
+    @include mixins.registrationForm;
+    .edit-selected-device-title {
+      margin: 0 auto;
+      width: 80%;
+      height: 20px;
+      border-bottom: 2px solid var(--darkWhite) !important;
+      color: var(--darkWhite);
+      font-size: 20px;
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+
+  .edit-selected-device-inputs {
+    height: 150px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    mat-label {
+      color: var(--white);
+    }
+    input {
+      color: var(--white);
+    }
+  }
+  .edit-selected-device-btn {
+    button {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      @include mixins.formGroupBtn;
+    }
+  }
+}

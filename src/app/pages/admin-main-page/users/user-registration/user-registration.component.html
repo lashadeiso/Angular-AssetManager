@@ -1,0 +1,82 @@
+<section class="user-registration-container">
+  <div class="user-registration-content">
+    <div class="user-registration-title">Registration</div>
+    <div class="user-registration-body">
+      <form
+        [formGroup]="signUp"
+        (ngSubmit)="onFormSubmit()"
+        class="sign-up-form"
+      >
+        <div class="sign-up-inputs">
+          <mat-form-field class="sign-up-fullName">
+            <mat-label>Full Name</mat-label>
+            <input matInput formControlName="fullName" />
+          </mat-form-field>
+
+          <mat-form-field class="sign-up-site">
+            <mat-label>Site</mat-label>
+            <mat-select
+              formControlName="site"
+              (selectionChange)="getProject($event.value)"
+            >
+              <mat-option *ngFor="let site of sitesDropDown" [value]="site">
+                {{ site }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="sign-up-project">
+            <mat-label>Project</mat-label>
+            <mat-select formControlName="project">
+              <mat-option
+                *ngFor="let project of projectsDropDown"
+                [value]="project"
+              >
+                {{ project }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="sign-up-role">
+            <mat-label>User Role</mat-label>
+            <mat-select
+              formControlName="role"
+              (selectionChange)="getUserRole($event.value)"
+            >
+              <mat-option *ngFor="let role of rolesDropDown" [value]="role">
+                {{ role }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="sign-up-mail" *ngIf="userRole !== 'agent'">
+            <mat-label>E-mail</mat-label>
+            <input matInput formControlName="email" />
+          </mat-form-field>
+
+          <mat-form-field class="sign-up-password" *ngIf="userRole !== 'agent'">
+            <mat-label>Password</mat-label>
+            <input
+              matInput
+              formControlName="password"
+              [type]="hide ? 'password' : 'text'"
+            />
+            <button
+              type="button"
+              mat-icon-button
+              matSuffix
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide"
+            >
+              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+        <div class="sign-up-btn">
+          <button type="submit" [disabled]="!signUp.valid">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

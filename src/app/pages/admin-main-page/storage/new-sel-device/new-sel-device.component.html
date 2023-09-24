@@ -1,0 +1,43 @@
+<section class="add-new-selected-device-container">
+  <div class="add-new-selected-device-content">
+    <div class="add-new-selected-device-title">Add New Device</div>
+    <div class="add-new-selected-device-body">
+      <form
+        [formGroup]="addNewSelDevice"
+        (ngSubmit)="onFormSubmit()"
+        class="add-new-selected-device-form"
+      >
+        <div class="add-new-selected-device-inputs">
+          <!-----------------------------------------Brand -->
+          <mat-form-field class="new-selected-device-brand">
+            <mat-label>Brand</mat-label>
+            <input matInput formControlName="brand" />
+          </mat-form-field>
+          <!----------------------------------------- Model -->
+          <mat-form-field class="new-selected-device-model">
+            <mat-label>Model</mat-label>
+            <input matInput formControlName="model" />
+          </mat-form-field>
+          <!----------------------------------------- Site -->
+          <mat-form-field class="new-selected-device-site">
+            <mat-label>Site</mat-label>
+            <mat-select formControlName="site">
+              <mat-option *ngFor="let site of sitesDropDown" [value]="site">
+                {{ site }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <!----------------------------------------- Quantity -->
+          <mat-form-field class="new-selected-device-quantity">
+            <mat-label>Quantity</mat-label>
+            <input type="number" matInput formControlName="quantity" />
+          </mat-form-field>
+        </div>
+        <!-------------------------------------------Button -->
+        <div class="add-new-selected-device-btn">
+          <button type="submit" [disabled]="!addNewSelDevice.valid">Add</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

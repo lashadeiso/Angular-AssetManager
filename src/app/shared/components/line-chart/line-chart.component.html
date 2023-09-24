@@ -1,0 +1,10 @@
+<div class="line-chart-container">
+  <canvas
+    baseChart
+    class="chart"
+    [data]="lineChartData"
+    [options]="lineChartOptions"
+    [type]="lineChartType"
+    (chartClick)="chartClicked($event)"
+  ></canvas>
+</div>

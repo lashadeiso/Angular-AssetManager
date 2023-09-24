@@ -1,0 +1,125 @@
+<section class="new-owner-of-sel-dev-container">
+  <div class="new-owner-of-sel-dev-content">
+    <div class="new-owner-of-sel-dev-title">Owner of {{ selDevice }}</div>
+    <div class="new-owner-of-sel-dev-body">
+      <form
+        [formGroup]="newOwnerOfSelDev"
+        (ngSubmit)="onFormSubmit()"
+        class="new-owner-of-sel-dev-form"
+      >
+        <div class="new-owner-of-sel-dev-inputs">
+          <!-- Serial Number -->
+          <mat-form-field class="sel-dev-serial-number">
+            <mat-label>Serial Number</mat-label>
+            <input matInput formControlName="serialNumber" />
+          </mat-form-field>
+
+          <!-- Brand -->
+          <mat-form-field class="sel-dev-brand">
+            <mat-label>Brand</mat-label>
+            <mat-select
+              formControlName="brand"
+              (selectionChange)="getModelSelectBox($event.value)"
+            >
+              <mat-option *ngFor="let brand of brandsDropDown" [value]="brand">
+                {{ brand }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <!-- Model -->
+          <mat-form-field class="sel-dev-model">
+            <mat-label>Model</mat-label>
+            <mat-select formControlName="model">
+              <mat-option *ngFor="let model of modelsDropDown" [value]="model">
+                {{ model }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <!-- Host Name -->
+          <mat-form-field
+            class="sel-dev-host-name"
+            *ngIf="selDevice !== 'headset' && selDevice !== 'monitor'"
+          >
+            <mat-label>Host Name</mat-label>
+            <input matInput formControlName="hostname" />
+          </mat-form-field>
+
+          <!-- Mac Address -->
+          <mat-form-field
+            class="sel-dev-mac-address"
+            *ngIf="selDevice !== 'headset' && selDevice !== 'monitor'"
+          >
+            <mat-label>Mac Address</mat-label>
+            <input matInput formControlName="macAddress" />
+          </mat-form-field>
+
+          <!-- Asset Number -->
+          <mat-form-field
+            class="sel-dev-asset-number"
+            *ngIf="selDevice !== 'headset'"
+          >
+            <mat-label>Asset Number</mat-label>
+            <input matInput formControlName="assetNumber" />
+          </mat-form-field>
+
+          <!-- Site -->
+          <mat-form-field class="owner-site">
+            <mat-label>Site</mat-label>
+            <mat-select
+              formControlName="site"
+              (selectionChange)="getProjectSelectBox($event.value)"
+            >
+              <mat-option *ngFor="let site of sitesDropDown" [value]="site">
+                {{ site }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <!-- Project -->
+          <mat-form-field class="owner-project">
+            <mat-label>Project</mat-label>
+            <mat-select
+              formControlName="project"
+              (selectionChange)="getUserSelectBox($event.value)"
+            >
+              <mat-option
+                *ngFor="let project of projectsDropDown"
+                [value]="project"
+              >
+                {{ project }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <!-- User Full Name -->
+          <mat-form-field class="user-fullName">
+            <mat-label>User</mat-label>
+            <mat-select formControlName="user">
+              <mat-option
+                *ngFor="let userFullName of usersFullNamesDropDown"
+                [value]="userFullName"
+              >
+                {{ userFullName }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <!-- Comment -->
+          <mat-form-field>
+            <mat-label>Comment</mat-label>
+            <textarea matInput formControlName="comment"></textarea>
+          </mat-form-field>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="owner-sign-up-btn">
+          <button type="submit" [disabled]="!newOwnerOfSelDev.valid">
+            Assign to
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

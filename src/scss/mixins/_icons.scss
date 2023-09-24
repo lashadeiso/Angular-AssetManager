@@ -1,0 +1,26 @@
+@mixin headerIcon {
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 40px;
+  width: 40px;
+}
+
+@mixin sideBarlogoIcon {
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 50px;
+  width: 50px;
+}
+
+@mixin assetIcon {
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 15px;
+  width: 15px;
+}
+@mixin signInIcon {
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 100px;
+}

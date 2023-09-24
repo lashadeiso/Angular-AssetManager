@@ -1,0 +1,50 @@
+.dashboard-container {
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+
+  .dashboard-widgets-wrapper {
+    height: 15vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5vh;
+    border-radius: 10px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+      rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    margin-bottom: 2.5vh;
+  }
+  .chart-container {
+    height: 41vh;
+    width: 100%;
+    margin-bottom: 2.5vh;
+    display: flex;
+    justify-content: space-between;
+
+    .line-chart {
+      width: 50%;
+      height: 100%;
+    }
+    .pie-chart {
+      width: 23%;
+      height: 100%;
+    }
+    .calendar {
+      width: 20%;
+      height: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+        rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    }
+  }
+
+  .top-product {
+    height: 25vh;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+      rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  }
+}

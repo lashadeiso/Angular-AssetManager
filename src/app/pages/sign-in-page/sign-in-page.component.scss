@@ -1,0 +1,82 @@
+@use "/src/scss/mixins";
+
+.sign-in-container {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--ballot);
+
+  .sign-in-logo {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    transform: translate(-50%, -50%);
+    background-image: url("/assets/icons/logo-icon.svg");
+    @include mixins.signInIcon;
+    &::after {
+      content: "Asset Manager";
+      font-size: 30px;
+      font-weight: 550;
+      white-space: nowrap;
+      position: absolute;
+      margin-left: 120px;
+      margin-top: 30px;
+      color: var(--gold);
+    }
+  }
+  .sign-in-content {
+    padding-top: 50px;
+    .sign-in-form {
+      .sign-in-header {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        font-size: 22px;
+        color: var(--darkWhite);
+      }
+      @include mixins.signInForm;
+      .sign-in-inputs {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        mat-label {
+          color: var(--white);
+        }
+        input {
+          color: var(--white);
+        }
+      }
+      .sign-in-btn {
+        width: 100%;
+        height: 50px;
+        margin-top: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        button {
+          @include mixins.formGroupBtn;
+        }
+      }
+      .error-message {
+        height: 50px;
+        width: 100%;
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--darkWhite);
+        font-size: 18px;
+        font-weight: 550;
+      }
+    }
+  }
+}
+
+.loading-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

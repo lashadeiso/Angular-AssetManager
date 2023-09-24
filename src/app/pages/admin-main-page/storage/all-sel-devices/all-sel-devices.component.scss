@@ -1,0 +1,30 @@
+@use "/src/scss/mixins";
+.all-sel-dev-from-storage {
+  height: 100%;
+  width: 100%;
+  .all-sel-dev-from-storage-header {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: var(--backGround);
+    border-bottom: 4px solid var(--gold);
+    .add-new-device-btn {
+      margin-left: 20px;
+      @include mixins.userBtn;
+    }
+    // .select-site-dropdown {
+    //   height: 50px;
+    //   margin-left: 10px;
+    //   mat-label {
+    //     color: var(--white);
+    //   }
+    //   input {
+    //     color: var(--white);
+    //   }
+    // }
+  }
+  .all-sel-dev-from-storage-table {
+    height: calc(100% - 60px);
+  }
+}

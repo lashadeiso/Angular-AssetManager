@@ -1,0 +1,21 @@
+<div [class.show-children]="showChildren">
+  <button class="toggle-button" (click)="toggleChildren()">
+    <div class="btn-icon-title">
+      <i [ngClass]="getIconClass(node.name)" class="icon-style"></i>
+      <span tabindex="0" class="button-text">{{ node.name }}</span>
+    </div>
+    <i *ngIf="node.children?.length" class="material-icons icon">{{
+      showChildren ? "keyboard_arrow_up" : "keyboard_arrow_down"
+    }}</i>
+  </button>
+  <div class="child-tree" [style.maxHeight]="showChildren ? '1000px' : '0px'">
+    <app-tree-button
+      *ngFor="let child of node.children"
+      [node]="child"
+      (click)="navigateToRoute(node, child)"
+      [ngClass]="{
+        'active-child-btn': node.name === nodeName && child.name === childName
+      }"
+    ></app-tree-button>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="all-owners-of-sel-davice">
+  <div class="all-owners-of-sel-davice-header">
+    <button class="add-new-btn" (click)="navigateNewOwner()">Add new</button>
+  </div>
+  <div class="all-owners-of-sel-davice-table">
+    <app-table
+      [displayedColumns]="displayedColumns"
+      [columnLabels]="columnLabels"
+      [dataSource]="dataSource"
+      [allEquipment]="ownersOfSelDev"
+      (deleteItem)="deleteItem($event)"
+      (editItem)="editItem($event)"
+    ></app-table>
+  </div>
+</div>

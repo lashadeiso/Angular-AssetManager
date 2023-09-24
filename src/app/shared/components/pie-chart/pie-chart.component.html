@@ -1,0 +1,10 @@
+<div class="pie-chart-container">
+  <canvas
+    baseChart
+    class="chart"
+    [data]="pieChartData"
+    [type]="pieChartType"
+    (chartClick)="onSegmentClick($event)"
+  >
+  </canvas>
+</div>

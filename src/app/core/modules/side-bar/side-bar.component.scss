@@ -1,0 +1,16 @@
+@use "/src/scss/mixins";
+.side-bar-container {
+  .side-bar-btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .tree-btn {
+      width: 90%;
+      padding-bottom: 0px !important;
+      margin-top: 20px;
+      background-color: var(--ballot);
+      border-radius: 5px;
+    }
+  }
+}
