@@ -6,3 +6,6 @@ https://github.com/lashadeiso/Angular-AssetManager/assets/85881151/7c8c7baf-8df9
 - Back/NestJS: Revazi Kukhianidze
 - 🔗: https://angular-asset-manager.vercel.app/sign-in
 
+- Test User
+- User: Admin@gmail.com
+- Pass: Qwerty123
