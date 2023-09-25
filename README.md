@@ -2,7 +2,7 @@ https://github.com/lashadeiso/Angular-AssetManager/assets/85881151/7c8c7baf-8df9
 
 ------------------------------
 - Test User
-- User: Admin@gmail.com
+- User: admin@gmail.com
 - Pass: Qwerty123
 
 -----------------------------
